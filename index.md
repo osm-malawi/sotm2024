@@ -1,1 +1,1 @@
-Welcome to SOTM 2024
+Welcome to SOTM 2024. More details coming soon.
