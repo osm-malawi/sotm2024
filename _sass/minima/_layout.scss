@@ -5,6 +5,7 @@
   border-top: 5px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -22,10 +23,13 @@
   &:visited {
     color: $grey-color-dark;
   }
+  &:hover{
+    text-decoration: none;
+  }
 }
 
 .site-nav {
-  float: right;
+  //float: right;
   line-height: $base-line-height * $base-font-size * 2.25;
 
   .nav-trigger {
@@ -37,13 +41,37 @@
   }
 
   .page-link {
-    color: $text-color;
+    color: $text-color;   
     line-height: $base-line-height;
+    position: relative;
+    &:before{
+      content: '';
+      height: 3px;
+      width: 0;
+      background-color: rgb(62, 60, 60);
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover{
+      text-decoration: none;
+      &:before{
+        width: 100%;
+        left: 0;
+      }
+    }
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
-      margin-right: 20px;
+      margin-right: 80px;
     }
+
+    &:first-child{
+      margin-left: 80px;
+    }
+    
   }
 
   @include media-query($on-palm) {
